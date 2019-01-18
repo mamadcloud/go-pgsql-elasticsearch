@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "353f5bda-0b12-4df3-b9d4-22c005ffdfa3",
+		"name": "Mudah.my",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Ads",
+					"item": [
+						{
+							"name": "Create Ads",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"listId\": 8000097,\n    \"originalListTime\": \"2013-07-19T12:15:11.685719Z\",\n    \"listTime\": \"2013-07-19T12:15:11.685719Z\",\n    \"status\": \"active\",\n    \"type\": \"sell\",\n    \"name\": \"Janet Wong\",\n    \"phone\": \"322873061\",\n    \"region\": 15,\n    \"city\": 1,\n    \"category\": 3,\n    \"userId\": 50,\n    \"phoneHidden\": true,\n    \"noSalesmen\": false,\n    \"companyAd\": true,\n    \"subject\": \"Shipping Executive / East / 2.7K /Alt Saturdays\",\n    \"body\": \"We sell the best and most delicious strawberries money can buy!\",\n    \"price\": 200,\n    \"oldPrice\": 0,\n    \"image\": \"\",\n    \"infoPage\": \"\",\n    \"InfoPageTitle\": \"\",\n    \"storeId\": 10,\n    \"modifiedAt\": null,\n    \"adType\": \"company\",\n    \"adParams\": [\n    \t{\n    \t\t\"name\": \"external_ad_id\",\n    \t\t\"value\": \"1001605\"\n    \t},\n    \t{\n    \t\t\"name\": \"link_type\",\n    \t\t\"value\": \"stjobs\"\n    \t},\n    \t{\n    \t\t\"name\": \"company_name\",\n    \t\t\"value\": \"CAREER TREND PTE LTD\"\n    \t},\n    \t{\n    \t\t\"name\": \"job_cat\",\n    \t\t\"value\": \"4,19,18\"\n    \t}\n    \t]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:81/ads",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "81",
+									"path": [
+										"ads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Ads",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"originalListTime\": \"2013-07-19T12:15:11.685719Z\",\n    \"listTime\": \"2013-07-19T12:15:11.685719Z\",\n    \"status\": \"active\",\n    \"type\": \"sell\",\n    \"name\": \"Janet Wong\",\n    \"phone\": \"322873061\",\n    \"region\": 15,\n    \"city\": 1,\n    \"category\": 3,\n    \"phoneHidden\": false,\n    \"noSalesmen\": true,\n    \"companyAd\": false,\n    \"subject\": \"Shipping Executive / East / 2.7K /Alt Saturdays\",\n    \"body\": \"We sell the best and most delicious strawberries money can buy!\",\n    \"price\": 200,\n    \"oldPrice\": 0,\n    \"image\": \"\",\n    \"infoPage\": \"\",\n    \"InfoPageTitle\": \"\",\n    \"storeId\": 10,\n    \"modifiedAt\": null,\n    \"adType\": \"company\",\n    \"adParams\": [\n    \t{\n    \t\t\"name\": \"external_ad_id\",\n    \t\t\"value\": \"1001605\"\n    \t},\n    \t{\n    \t\t\"name\": \"link_type\",\n    \t\t\"value\": \"stjobs\"\n    \t},\n    \t{\n    \t\t\"name\": \"company_name\",\n    \t\t\"value\": \"CAREER TREND SDN BHD\"\n    \t},\n    \t{\n    \t\t\"name\": \"job_cat\",\n    \t\t\"value\": \"4,19,18\"\n    \t}\n    \t]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:81/ads/1702",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "81",
+									"path": [
+										"ads",
+										"1702"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Ads",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:81/ads/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "81",
+									"path": [
+										"ads",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "ElasticSearch",
+			"item": [
+				{
+					"name": "Get by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9201/ads/_doc/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9201",
+							"path": [
+								"ads",
+								"_doc",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9201/ads/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9201",
+							"path": [
+								"ads",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9201/ads/_doc/1702",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9201",
+							"path": [
+								"ads",
+								"_doc",
+								"1702"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

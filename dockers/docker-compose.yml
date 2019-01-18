@@ -1,0 +1,57 @@
+version: '3.1'
+services:
+  web_server:
+    build:
+      context: ./nginx
+    container_name: web_server
+    links: 
+      - web_application:go_app
+    ports:
+      - 81:80
+
+  web_application:
+    build:
+      context: ./go_api
+    container_name: web_application
+    restart: always
+    ports:
+      - 8001:8000
+    links:
+      - db:database_postgres
+      - elasticsearch:elasticsearch
+    tty: true
+
+  app_services:
+    build:
+      context: ./go_services
+    container_name: app_services
+    restart: always
+    links:
+      - db:database_postgres
+      - elasticsearch:elasticsearch
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
+    container_name: elasticsearch
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
+    ports:
+      - 9201:9200
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: my_password
+    volumes:
+      - ./postgresql/postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
