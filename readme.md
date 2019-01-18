@@ -27,7 +27,7 @@ The source code for the API and service to update `ElasticSearch` are in folder 
 After you download/clone this `Repo`, go to `dockers` folder. Run command `docker-compose up --build -d`
 
 ### Access containers
-1. API: [`localhost:8001`](http://localhost:8001/)
+1. API nginx: [`localhost:81`](http://localhost:81/)
 2. Database: `localhost:5433`
 3. ElasticSearch: [`localhost:9201`](http://locahost:9201/)
 
